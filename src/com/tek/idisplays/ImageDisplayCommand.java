@@ -16,7 +16,7 @@ public class ImageDisplayCommand implements CommandExecutor {
 	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(!(sender instanceof Player)) {
-			sender.sendMessage(Reference.PREFIX + Reference.color("&cYou must be a player to use this"));
+			sender.sendMessage(Reference.PREFIX + Reference.color("&c你必须是一个使用它的玩家"));
 			return false;
 		}
 		
@@ -31,21 +31,21 @@ public class ImageDisplayCommand implements CommandExecutor {
 							if(selection.imageExists()) {
 								Main.getInstance().getSelections().put(player.getUniqueId(), selection);
 								player.getInventory().addItem(Reference.creationWand);
-								sender.sendMessage(Reference.PREFIX + Reference.color("&aGiven you the display creation wand"));
-								sender.sendMessage(Reference.color("&7- &6Right click on the face of the first block"));
-								sender.sendMessage(Reference.color("&7- &6Right click on the other block"));
-								sender.sendMessage(Reference.color("&7- &6You can cancel display creation by dropping the item"));
+								sender.sendMessage(Reference.PREFIX + Reference.color("&a给你显示创建魔杖"));
+								sender.sendMessage(Reference.color("&7- &6右键单击第一个块的面"));
+								sender.sendMessage(Reference.color("&7- &6右键单击另一个块"));
+								sender.sendMessage(Reference.color("&7- &6您可以通过删除项目来取消显示创建"));
 							} else {
-								sender.sendMessage(Reference.PREFIX + Reference.color("&cThat image does not exist"));
+								sender.sendMessage(Reference.PREFIX + Reference.color("&c那个图像不存在"));
 							}
 						} else {
-							sender.sendMessage(Reference.PREFIX + Reference.color("&cYou're already creating a display"));
+							sender.sendMessage(Reference.PREFIX + Reference.color("&c你已经在创建一个显示器了"));
 						}
 					} else {
-						sender.sendMessage(Reference.PREFIX + Reference.color("&cYou do not have enough permissions to use this"));
+						sender.sendMessage(Reference.PREFIX + Reference.color("&c您没有足够的权限来使用它"));
 					}
 				} else {
-					sender.sendMessage(Reference.PREFIX + Reference.color("&cInvalid syntax"));
+					sender.sendMessage(Reference.PREFIX + Reference.color("&c无效的语法"));
 				}
 			} 
 			
@@ -54,34 +54,34 @@ public class ImageDisplayCommand implements CommandExecutor {
 					if(sender.hasPermission(Reference.PERMISSION_REMOVE)) {
 						if(!Main.getInstance().getDeletions().contains(player.getUniqueId())) {
 							Main.getInstance().getDeletions().add(player.getUniqueId());
-							sender.sendMessage(Reference.PREFIX + Reference.color("&aHit a display and it will be completely removed"));
+							sender.sendMessage(Reference.PREFIX + Reference.color("&a点击一个显示，它将被完全删除"));
 						} else {
-							sender.sendMessage(Reference.PREFIX + Reference.color("&cYou're already removing a display"));
+							sender.sendMessage(Reference.PREFIX + Reference.color("&c你已经删除了一个显示器"));
 						}
 					} else {
-						sender.sendMessage(Reference.PREFIX + Reference.color("&cYou do not have enough permissions to use this"));
+						sender.sendMessage(Reference.PREFIX + Reference.color("&c您没有足够的权限来使用它"));
 					}
 				} else {
-					sender.sendMessage(Reference.PREFIX + Reference.color("&cInvalid syntax"));
+					sender.sendMessage(Reference.PREFIX + Reference.color("&c无效的语法"));
 				}
 			} 
 			
 			else if(args[0].equalsIgnoreCase("help")) {
 				if(args.length == 1) {
-					sender.sendMessage(Reference.color("&a&lImage&2Displays &6Help Menu"));
-					sender.sendMessage(Reference.color("&8- &a/imagedisplays create <file/url> &8- &aCreates a display according to your selection"));
-					sender.sendMessage(Reference.color("&8- &a/imagedisplays remove &8- &aPuts you in deletion mode (Hit a display to remove it)"));
-					sender.sendMessage(Reference.color("&8- &a/imagedisplays help &8- &aProvides the help menu of the plugin"));
+					sender.sendMessage(Reference.color("&a&l图片&2显示 &6帮助菜单"));
+					sender.sendMessage(Reference.color("&8- &a/tupian create <文件/url> &8- &a根据您的选择创建显示"));
+					sender.sendMessage(Reference.color("&8- &a/tupian remove &8- &a让你进入删除模式（点击显示将其删除）"));
+					sender.sendMessage(Reference.color("&8- &a/tupian help &8- &a提供插件的帮助菜单"));
 				} else {
-					sender.sendMessage(Reference.PREFIX + Reference.color("&cInvalid syntax"));
+					sender.sendMessage(Reference.PREFIX + Reference.color("&c无效的语法"));
 				}
 			} 
 			
 			else {
-				sender.sendMessage(Reference.PREFIX + Reference.color("&cInvalid syntax"));
+				sender.sendMessage(Reference.PREFIX + Reference.color("&c无效的语法"));
 			}
 		} else {
-			sender.sendMessage(Reference.PREFIX + Reference.color("&cInvalid syntax"));
+			sender.sendMessage(Reference.PREFIX + Reference.color("&c无效的语法"));
 		}
 		
 		return false;

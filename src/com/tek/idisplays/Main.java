@@ -36,8 +36,8 @@ public class Main extends JavaPlugin {
 		Reference.init();
 		mapManager.getMapCache().addAll(mapManager.readCache());
 		
-		getCommand("imagedisplays").setExecutor(new ImageDisplayCommand());
-		getCommand("imagedisplays").setTabCompleter(new ImageDisplayCommand.ImageDisplayCompleter());
+		getCommand("tupian").setExecutor(new ImageDisplayCommand());
+		getCommand("tupian").setTabCompleter(new ImageDisplayCommand.ImageDisplayCompleter());
 		
 		getServer().getPluginManager().registerEvents(new WorldListener(), this);
 		getServer().getPluginManager().registerEvents(new ItemFrameListener(), this);

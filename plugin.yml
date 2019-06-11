@@ -1,13 +1,11 @@
-name: ImageDisplays
+name: tupian
 author: RedstoneTek
-description: A plugin to convert png images to banners made of item frames and maps
 
 version: 1.0
-api-version: 1.14
+api-version: 1.13
 main: com.tek.idisplays.Main
 load: startup
 
 commands:
-  imagedisplays:
-    aliases: [imagedisplay, idisplays, idisplay, displays, display]
-    description: Creates a custom display
+  tupian:
+    description: 创建图片显示

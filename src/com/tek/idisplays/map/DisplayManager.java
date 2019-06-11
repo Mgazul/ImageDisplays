@@ -131,12 +131,12 @@ public class DisplayManager extends MapRenderer {
 						}
 					}
 					
-					player.sendMessage(Reference.PREFIX + Reference.color("&aSuccess! The display has been created."));
+					player.sendMessage(Reference.PREFIX + Reference.color("&a成功！ 显示已创建."));
 				} catch (IOException e) {
-					player.sendMessage(Reference.PREFIX + Reference.color("&cCouldn't create display. The image is corrupted or unaccessible."));
+					player.sendMessage(Reference.PREFIX + Reference.color("&c无法创建显示。 图像已损坏或无法访问."));
 				}
 			} else {
-				player.sendMessage(Reference.PREFIX + Reference.color("&cCouldn't create display. The image no longer exists."));
+				player.sendMessage(Reference.PREFIX + Reference.color("&c无法创建显示。 图像不再存在."));
 			}
 		});
 	}
@@ -145,7 +145,7 @@ public class DisplayManager extends MapRenderer {
 	public static void attemptDisplayDeletion(ItemFrame baseFrame, Player p) {
 		final long start = System.currentTimeMillis();
 		Main.getInstance().getServer().getScheduler().scheduleSyncDelayedTask(Main.getInstance(), () -> {
-			p.sendMessage(Reference.PREFIX + Reference.color("&aStarted deletion of the display..."));
+			p.sendMessage(Reference.PREFIX + Reference.color("&a开始删除显示..."));
 			
 			List<ItemFrame> forRemoval = new ArrayList<ItemFrame>();
 			List<ItemFrame> stack = new ArrayList<ItemFrame>();
@@ -184,7 +184,7 @@ public class DisplayManager extends MapRenderer {
 			}
 			
 			long now = System.currentTimeMillis();
-			p.sendMessage(Reference.PREFIX + Reference.color("&aSuccess! Deleted &6" + forRemoval.size() + " &aitem frames, took &6" + (now - start) + "&ams"));
+			p.sendMessage(Reference.PREFIX + Reference.color("&a成功！删除 &6" + forRemoval.size() + " &a项目框架，采取 &6" + (now - start) + "&ams"));
 		});
 	}
 	

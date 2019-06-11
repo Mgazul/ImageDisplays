@@ -30,11 +30,11 @@ public class InteractListener implements Listener {
 							BlockFace faceLooking = SelectionHighlightTask.getBlockFace(player);
 							
 							if(faceLooking == BlockFace.UP || faceLooking == BlockFace.DOWN) {
-								player.sendMessage(Reference.PREFIX + Reference.color("&cYou cannot place displays on the floor or ceiling"));
+								player.sendMessage(Reference.PREFIX + Reference.color("&c您无法在地板或天花板上放置显示器"));
 							} else {
 								selection.setFrom(blockLook.getRelative(faceLooking));
 								selection.setFace(faceLooking);
-								player.sendMessage(Reference.PREFIX + Reference.color("&aFirst display corner location set"));
+								player.sendMessage(Reference.PREFIX + Reference.color("&a首先显示角落位置设置"));
 							}
 						} else {
 							Block blockLook = player.getTargetBlockExact(5);
@@ -50,12 +50,12 @@ public class InteractListener implements Listener {
 							if(works) {
 								selection.setTo(toBlock);
 								player.getInventory().setItemInMainHand(null);
-								player.sendMessage(Reference.PREFIX + Reference.color("&aSelection completed! Creating display..."));
+								player.sendMessage(Reference.PREFIX + Reference.color("&a选择完成！ 创建显示..."));
 								
 								DisplayManager.attemptCreateDisplay(selection, player);
 								Main.getInstance().getSelections().remove(player.getUniqueId());
 							} else {
-								player.sendMessage(Reference.PREFIX + Reference.color("&cYou cannot place a display at this location (Must be 1 block thick)"));
+								player.sendMessage(Reference.PREFIX + Reference.color("&c您无法在此位置放置显示器（必须厚度为1块）"));
 							}
 						}
 					}

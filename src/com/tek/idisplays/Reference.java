@@ -12,9 +12,9 @@ import org.bukkit.persistence.PersistentDataType;
 
 public class Reference {
 	
-	public static final String PREFIX            = color("&8[&aImage&2Displays&8] &f");
-	public static final String PERMISSION_CREATE = "imagedisplays.create";
-	public static final String PERMISSION_REMOVE = "imagedisplays.remove";
+	public static final String PREFIX            = color("&8[&a图片&2显示&8] &f");
+	public static final String PERMISSION_CREATE = "tupain.create";
+	public static final String PERMISSION_REMOVE = "tupain.remove";
 	public static File bannerFolder;
 	public static NamespacedKey wandIdentifier;
 	public static ItemStack creationWand;
@@ -31,7 +31,7 @@ public class Reference {
 		
 		creationWand = new ItemStack(Material.STICK);
 		ItemMeta meta = creationWand.getItemMeta();
-		meta.setDisplayName(color("&a&lDisplay Creation Tool"));
+		meta.setDisplayName(color("&a&l显示创建工具"));
 		meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 1, false);
 		meta.getPersistentDataContainer().set(wandIdentifier, PersistentDataType.BYTE, (byte)0x01);
 		creationWand.setItemMeta(meta);

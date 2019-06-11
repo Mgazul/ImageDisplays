@@ -20,7 +20,7 @@ public class MovementListener implements Listener {
 				if(event.getItemDrop().getItemStack().getItemMeta().getPersistentDataContainer().has(Reference.wandIdentifier, PersistentDataType.BYTE)) {
 					event.getItemDrop().remove();
 					Main.getInstance().getSelections().remove(event.getPlayer().getUniqueId());
-					event.getPlayer().sendMessage(Reference.PREFIX + Reference.color("&cCancelled display creation"));
+					event.getPlayer().sendMessage(Reference.PREFIX + Reference.color("&c取消了显示创建"));
 				}
 			}
 		}
@@ -30,7 +30,7 @@ public class MovementListener implements Listener {
 	public void onTeleport(PlayerTeleportEvent event) {
 		if(Main.getInstance().getSelections().containsKey(event.getPlayer().getUniqueId())) {
 			Main.getInstance().getSelections().remove(event.getPlayer().getUniqueId());
-			event.getPlayer().sendMessage(Reference.PREFIX + Reference.color("&cCancelled display creation"));
+			event.getPlayer().sendMessage(Reference.PREFIX + Reference.color("&c取消了显示创建"));
 		}
 	}
 	
@@ -41,7 +41,7 @@ public class MovementListener implements Listener {
 			if(selection.getFrom() != null) {
 				if(selection.getFrom().getLocation().distance(event.getPlayer().getLocation()) >= 128) {
 					Main.getInstance().getSelections().remove(event.getPlayer().getUniqueId());
-					event.getPlayer().sendMessage(Reference.PREFIX + Reference.color("&cCancelled display creation (Too Large)"));
+					event.getPlayer().sendMessage(Reference.PREFIX + Reference.color("&c取消显示创建（太大）"));
 				}
 			}
 		}

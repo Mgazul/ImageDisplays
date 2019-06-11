@@ -31,7 +31,7 @@ public class WandCheckingTask implements Runnable {
 				}
 				
 				if(!found) {
-					player.sendMessage(Reference.PREFIX + Reference.color("&cCancelled display creation"));
+					player.sendMessage(Reference.PREFIX + Reference.color("&c取消了显示创建"));
 					uuidIterator.remove();
 					Main.getInstance().getSelections().remove(uuid);
 				}
